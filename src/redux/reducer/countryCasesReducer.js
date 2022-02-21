@@ -1,31 +1,31 @@
 import {
-  FETCH_CASES_REQUEST,
-  FETCH_CASES_SUCCESS,
-  FETCH_CASES_ERROR,
+  FETCH_COUNTRY_CASES_REQUEST,
+  FETCH_COUNTRY_CASES_SUCCESS,
+  FETCH_COUNTRY_CASES_ERROR,
 } from "../contains/actionTypes";
 
 const initialState = {
-  posts: [],
+  countriesData: [],
   loading: false,
   error: null,
 };
 
-const casesReducer = (state = initialState, action) => {
+const countryCasesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_CASES_REQUEST:
+    case FETCH_COUNTRY_CASES_REQUEST:
       return {
         ...state,
         loading: true,
       };
 
-    case FETCH_CASES_SUCCESS:
+    case FETCH_COUNTRY_CASES_SUCCESS:
       return {
         ...state,
         loading: false,
-        posts: action.payload,
+        countriesData: action.payload,
       };
 
-    case FETCH_CASES_ERROR:
+    case FETCH_COUNTRY_CASES_ERROR:
       return {
         ...state,
         loading: false,
@@ -36,4 +36,4 @@ const casesReducer = (state = initialState, action) => {
   }
 };
 
-export default casesReducer;
+export default countryCasesReducer;

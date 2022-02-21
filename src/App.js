@@ -1,10 +1,12 @@
-import Home from "../src/pages/home";
+import GlobalStatistics from "./pages/globalStatistics";
+import CountryStatistics from "./pages/countryStatistics";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <Home />
+      <GlobalStatistics />
+      <CountryStatistics />
     </div>
   );
 };

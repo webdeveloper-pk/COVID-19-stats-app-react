@@ -1,1 +1,1 @@
-export const baseURL = "https://jsonplaceholder.typicode.com";
+export const baseURL = "https://disease.sh/v3/covid-19";

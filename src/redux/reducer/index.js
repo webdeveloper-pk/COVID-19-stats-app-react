@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import casesReducer from "./casesReducer";
+import globalCasesReducer from "./globalCasesReducer";
+import countryCasesReducer from "./countryCasesReducer";
 
 const rootReducer = combineReducers({
-  casesReducer,
+  globalCasesReducer,
+  countryCasesReducer,
 });
 
 export default rootReducer;

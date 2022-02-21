@@ -1,7 +1,9 @@
-import { fetchCases } from "./casesAction";
+import { fetchTotalCases } from "./globalCasesAction";
+import { fetchCountryCases } from "./countryCasesAction";
 
 const allActions = {
-  fetchCases,
+  fetchTotalCases,
+  fetchCountryCases,
 };
 
 export default allActions;
