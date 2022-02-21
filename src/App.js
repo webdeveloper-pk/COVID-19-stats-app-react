@@ -1,7 +1,12 @@
+import Home from "../src/pages/home";
 import "./App.css";
 
 const App = () => {
-  return <div className="App">Covid app</div>;
+  return (
+    <div className="App">
+      <Home />
+    </div>
+  );
 };
 
 export default App;
