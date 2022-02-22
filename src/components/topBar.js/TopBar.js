@@ -4,7 +4,7 @@ import "./style.css";
 
 const { Option } = Select;
 
-const TopBar = () => {
+const TopBar = ({ onChangeHandler }) => {
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
@@ -24,7 +24,7 @@ const TopBar = () => {
       </div>
       <div className="search-wrapper">
         <div className="search-text">Search By :</div>
-        <Input placeholder="Search" size="middle" />
+        <Input placeholder="Search" size="middle" onChange={onChangeHandler} />
       </div>
     </div>
   );

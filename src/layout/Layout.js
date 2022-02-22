@@ -29,7 +29,7 @@ export default class LayoutComponent extends React.Component {
   render() {
     console.log(this.props.location);
     return (
-      <Layout className="layoutStyling" theme="dark">
+      <Layout className="layoutStyling">
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo">
             {this.state.collapsed === true ? (

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../redux/action";
 import { Table } from "antd";
@@ -41,6 +41,8 @@ const columns = [
 ];
 
 const CountryStatistics = () => {
+  const [filteredData, setFilteredData] = useState([]);
+
   const dispatch = useDispatch();
   const countryStats = useSelector(
     (state) => state.countryCasesReducer.countriesData
@@ -52,7 +54,24 @@ const CountryStatistics = () => {
     // eslint-disable-next-line
   }, []);
 
-  const data = countryStats.map((item) => {
+  const onChangeHandler = (e) => {
+    let result = [];
+    const value = e.target.value;
+    if (value.length >= 1) {
+      result = countryStats?.filter((character) => {
+        return character.country.toLowerCase().startsWith(value.toLowerCase());
+      });
+      setFilteredData(result);
+    } else {
+      setFilteredData(countryStats);
+    }
+  };
+
+  useEffect(() => {
+    if (countryStats.length) setFilteredData(countryStats);
+  }, [countryStats]);
+
+  const data = filteredData?.map((item) => {
     return {
       key: item.countryInfo._id,
       Ranking: item.countryInfo._id,
@@ -68,7 +87,7 @@ const CountryStatistics = () => {
   return (
     <>
       {/* top bar */}
-      <TopBar />
+      <TopBar onChangeHandler={onChangeHandler} />
       <div className="table-responsive">
         {/* table component */}
         <Table columns={columns} dataSource={data} key={data.key} />
