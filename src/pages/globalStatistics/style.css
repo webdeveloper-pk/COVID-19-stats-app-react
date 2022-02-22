@@ -1,0 +1,11 @@
+.stats-card {
+  background-color: #f0f2f5;
+  padding: 30px 0px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.todayHeading {
+  font-size: 20px;
+  font-weight: 600;
+}

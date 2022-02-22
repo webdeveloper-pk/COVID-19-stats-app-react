@@ -19,8 +19,11 @@ const CountryStatistics = () => {
       {countryStats?.map((data, ind) => {
         return (
           <div key={ind}>
-            Country : {data.country}, Total Cases {data.cases} , Total Deaths
-            {data.deaths} , Total Recovered {data.recovered}
+            Ranking : {data.countryInfo._id}
+            Country : {data.country}, Total Cases {data.cases} , Active :{" "}
+            {data.active} , Total Deaths
+            {data.deaths} , Critical {data.critical}, Total Recovered{" "}
+            {data.recovered}
           </div>
         );
       })}

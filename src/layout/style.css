@@ -1,0 +1,51 @@
+#components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.layoutStyling {
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 63px;
+  color: #fff;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.site-layout .headerCustom {
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.site-layout .header-text {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.footer-text {
+  background-color: #ffffff;
+}
