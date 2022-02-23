@@ -5,8 +5,8 @@ import "./style.css";
 const { Option } = Select;
 
 const TopBar = ({ onChangeHandler }) => {
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
+  const onSelect = (value) => {
+    console.log(value);
   };
 
   return (
@@ -14,17 +14,22 @@ const TopBar = ({ onChangeHandler }) => {
       <div className="select-wrapper">
         <div>Sort By : </div>
         <Select
-          defaultValue="lucy"
-          onChange={handleChange}
+          defaultValue="Active"
+          onChange={onSelect}
           className="selectCustom"
         >
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
+          <Option value="active">Active</Option>
+          <Option value="deaths">Deaths</Option>
+          <Option value="recovered">Recovered</Option>
         </Select>
       </div>
       <div className="search-wrapper">
         <div className="search-text">Search By :</div>
-        <Input placeholder="Search" size="middle" onChange={onChangeHandler} />
+        <Input
+          placeholder="Countries"
+          size="middle"
+          onChange={onChangeHandler}
+        />
       </div>
     </div>
   );

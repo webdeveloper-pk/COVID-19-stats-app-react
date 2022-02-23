@@ -2,16 +2,14 @@ import React from "react";
 import "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
-const CahrtComponent = ({ globalStats }) => {
-  console.log(globalStats, "chart data");
+const DoughnutComponent = ({ globalStats }) => {
   return (
     <div>
       <Doughnut
         data={{
-          labels: ["Active", "Deaths", "Recovered"],
+          labels: ["Total Active", "Total Deaths", "Total Recovered"],
           datasets: [
             {
-              label: "# of cases",
               data: [
                 globalStats.active,
                 globalStats.deaths,
@@ -27,15 +25,6 @@ const CahrtComponent = ({ globalStats }) => {
         width={800}
         options={{
           maintainAspectRatio: false,
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                },
-              },
-            ],
-          },
           legend: {
             labels: {
               fontSize: 25,
@@ -47,4 +36,4 @@ const CahrtComponent = ({ globalStats }) => {
   );
 };
 
-export default CahrtComponent;
+export default DoughnutComponent;

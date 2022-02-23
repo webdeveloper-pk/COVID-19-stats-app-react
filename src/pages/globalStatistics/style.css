@@ -19,46 +19,8 @@
 
 .today-text {
   margin-bottom: 10px;
-}
-
-.blog-wrapper {
-  text-align: left;
-}
-
-.blog-text {
-  color: #76b2e7;
-}
-
-.blog-link {
-  color: #76b2e7;
-}
-
-.blog-image {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-}
-
-.blog-image img {
+  padding: 0px 10px;
   width: 100%;
-  object-fit: contain;
-}
-.blog-cutton {
 }
 
 /* media queries */
-
-@media screen and (max-width: 524px) {
-  .blog-text {
-    font-size: 16px;
-  }
-  .blog-paragraph {
-    font-size: 12px;
-  }
-  .blog-image {
-    display: none;
-  }
-  .blog-wrapper {
-    text-align: center;
-  }
-}
