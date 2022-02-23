@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../redux/action";
-import { Input, Select } from "antd";
-import { Table } from "ant-table-extensions";
-// import TopBar from "../../components/topBar.js/TopBar";
+import TopBar from "../../components/topBar";
+import TableComponent from "../../components/table";
 import "./style.css";
 
 const CountryStatistics = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [sortedInfo, setSortedInfo] = useState(null);
 
-  const { Option } = Select;
   const dispatch = useDispatch();
   const countryStats = useSelector(
     (state) => state.countryCasesReducer.countriesData
@@ -51,7 +49,12 @@ const CountryStatistics = () => {
   });
 
   const onSelect = (value) => {
-    if (value === "active") {
+    if (value === "cases") {
+      setSortedInfo({
+        order: "descend",
+        columnKey: "Cases",
+      });
+    } else if (value === "active") {
       setSortedInfo({
         order: "descend",
         columnKey: "Active",
@@ -86,6 +89,9 @@ const CountryStatistics = () => {
     {
       title: "Cases",
       dataIndex: "Cases",
+      key: "Cases",
+      sorter: (a, b) => a.Cases - b.Cases,
+      sortOrder: sortedInfo?.columnKey === "Cases" && sortedInfo.order,
     },
     {
       title: "Active",
@@ -120,38 +126,13 @@ const CountryStatistics = () => {
   return (
     <>
       {/* top bar */}
-      {/* <TopBar onChangeHandler={onChangeHandler} /> */}
-      <div className="top-wrapper">
-        <div className="select-wrapper">
-          <div>Sort By : </div>
-          <Select
-            defaultValue="Active"
-            onChange={onSelect}
-            className="selectCustom"
-          >
-            <Option value="active">Active</Option>
-            <Option value="deaths">Deaths</Option>
-            <Option value="critical">Critical</Option>
-            <Option value="recovered">Recovered</Option>
-          </Select>
-        </div>
-        <div className="search-wrapper">
-          <div className="search-text">Search By :</div>
-          <Input
-            placeholder="Countries"
-            size="middle"
-            onChange={onChangeHandler}
-          />
-        </div>
-      </div>
+      <TopBar onChangeHandler={onChangeHandler} onSelect={onSelect} />
       {/* table component */}
       <div className="table-responsive">
-        <Table
+        <TableComponent
           columns={columns}
-          dataSource={data}
-          key={data.key}
-          exportable
-          onChange={handleChange}
+          data={data}
+          handleChange={handleChange}
         />
       </div>
     </>

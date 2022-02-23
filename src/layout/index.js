@@ -8,7 +8,7 @@ import {
   GlobalOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
-import { usePathname } from "../components/custome Hook/usePathName";
+import { usePathname } from "../customeHook/usePathName";
 import "./style.css";
 
 const { Header, Sider, Content, Footer } = Layout;

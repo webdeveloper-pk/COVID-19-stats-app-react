@@ -24,15 +24,14 @@
   text-align: left;
 }
 
-.selectCustom {
+.select-custom {
   width: 50%;
   text-align: left !important;
 }
 
-.table-responsive {
-  overflow: scroll;
+.menu-custom {
+  text-align: left !important;
 }
-
 /* media queries */
 
 @media screen and (max-width: 1024px) {
@@ -47,7 +46,7 @@
   .search-wrapper {
     width: 100%;
   }
-  .selectCustom {
+  .select-custom {
     width: 50%;
   }
 }
@@ -69,7 +68,7 @@
     align-items: flex-start;
     gap: 10px;
   }
-  .selectCustom {
+  .select-custom {
     width: 100%;
   }
 }

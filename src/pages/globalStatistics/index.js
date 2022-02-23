@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import allActions from "../../redux/action";
 import { Statistic, Row, Col, Divider, Card } from "antd";
 import {
   ArrowUpOutlined,
   SafetyOutlined,
   WarningOutlined,
 } from "@ant-design/icons";
+import allActions from "../../redux/action";
 import DoughnutComponent from "../../components/charts/Doughnut";
 import BarComponent from "../../components/charts/Bar";
 import "./style.css";
@@ -16,7 +16,6 @@ const GlobalStatistics = () => {
   const globalStats = useSelector(
     (state) => state.globalCasesReducer.globalData
   );
-  console.log(globalStats, "data");
 
   useEffect(() => {
     dispatch(allActions.fetchTotalCases());
@@ -26,6 +25,7 @@ const GlobalStatistics = () => {
   return (
     <>
       <Row gutter={[28, 28]} type="flex">
+        {/* global stats */}
         <Col xs={24} md={12} lg={6}>
           <div className="custom-wrapper">
             <Statistic
@@ -70,12 +70,13 @@ const GlobalStatistics = () => {
             />
           </div>
         </Col>
-        {/* chart Component */}
+        {/* Doughnut chart  */}
         <Col xs={24} lg={18} style={{ display: "flex" }}>
           <div className="stats-card custom-wrapper">
             <DoughnutComponent globalStats={globalStats} />
           </div>
         </Col>
+        {/* daily stats */}
         <Col xs={24} lg={6}>
           <div className="stats-card custom-wrapper">
             <div className="today-heading">Statistics </div>
@@ -100,7 +101,7 @@ const GlobalStatistics = () => {
             />
           </div>
         </Col>
-        {/* stats */}
+        {/* other stats */}
         <Col xs={24} lg={6} style={{ display: "flex" }}>
           <div className="stats-card custom-wrapper">
             <Statistic
@@ -122,7 +123,7 @@ const GlobalStatistics = () => {
             />
           </div>
         </Col>
-        {/* card with bar chart */}
+        {/* bar chart */}
         <Col xs={24} lg={18} style={{ display: "flex" }}>
           <Card className="stats-card custom-wrapper">
             <BarComponent globalStats={globalStats} />
