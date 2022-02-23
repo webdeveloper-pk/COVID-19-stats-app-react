@@ -26,7 +26,7 @@ const GlobalStatistics = () => {
 
   return (
     <>
-      <Row gutter={[28, 28]}>
+      <Row gutter={[28, 28]} type="flex">
         <Col xs={24} md={12} lg={6}>
           <Statistic
             title="Active Cases"
@@ -92,55 +92,55 @@ const GlobalStatistics = () => {
           </div>
         </Col>
         {/* card with img + text */}
-        <Col xs={24} lg={12}>
-          <Card bordered={false} className="stats-card">
+        <Col xs={24} lg={12} style={{ display: "flex" }}>
+          <Card className="stats-card blog-card">
             <Row gutter>
-              <Col xs={24} md={12} sm={24} lg={12} xl={14} className="">
-                <div className="">
-                  <div className="">
-                    <h2>New Version of Corona Virus</h2>
-                    <p className="">
-                      Delta rapidly became the dominant variant of the
-                      SARS-CoV-2 virus in the U.S. in 2021.
-                    </p>
-                  </div>
-                  <div className="">
-                    <a className="" href="#" disabled>
-                      Read More
-                      {<RightOutlined />}
-                    </a>
-                  </div>
+              <Col xs={24} md={12} sm={24} lg={12} xl={14}>
+                <div className="blog-wrapper">
+                  <h2 className="blog-text"> Treatments against omicron</h2>
+                  <p className="blog-paragraph">
+                    Do Covid treatments work against omicron subvariant?
+                    Scientists keep close watch
+                  </p>
+                </div>
+                <div className="blog-wrapper">
+                  <a
+                    className="blog-link"
+                    href="https://www.nbcnews.com/health/health-news/omicron-subvariant-covid-treatments-work-ba2-scientists-keep-close-wat-rcna16836"
+                    target="_blank"
+                  >
+                    <span> Read More </span>
+                    <RightOutlined />
+                  </a>
                 </div>
               </Col>
-              <Col xs={24} md={12} sm={24} lg={12} xl={10} className="">
-                <div className="">
-                  <img
-                    src="./images/logo.png"
-                    alt=""
-                    className=""
-                    width="145px"
-                    height="145px"
-                  />
+              <Col xs={24} md={12} sm={24} lg={12} xl={10}>
+                <div className="blog-image">
+                  <img src="./images/logo.png" alt="image" />
                 </div>
               </Col>
             </Row>
           </Card>
         </Col>
         {/* card with text */}
-        <Col xs={24} lg={12}>
-          <Card bordered={false} className="stats-card">
+        <Col xs={24} lg={12} style={{ display: "flex" }}>
+          <Card className="stats-card">
             <div className="">
-              <div className="">
-                <h2>Update on Omicron</h2>
-                <p>
+              <div>
+                <h2 className="blog-text">Update on Omicron</h2>
+                <p className="blog-paragraph">
                   This decision was based on the evidence presented to the
                   TAG-VE that Omicron has several mutations that may have an
-                  impact on how it behaves, for example, on how easily .
+                  impact on how it behaves.
                 </p>
               </div>
-              <div className="">
-                <a className="" href="#" disabled>
-                  Read More
+              <div>
+                <a
+                  className="blog-link"
+                  href="https://blogs.adb.org/blog/five-things-you-need-know-about-new-omicron-variant"
+                  target="_blank"
+                >
+                  <span> Read More </span>
                   <RightOutlined />
                 </a>
               </div>

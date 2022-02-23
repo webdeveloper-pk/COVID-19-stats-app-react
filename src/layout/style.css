@@ -48,4 +48,11 @@
 
 .footer-text {
   background-color: #ffffff;
+  font-size: 14px;
+}
+
+.link-custom {
+  color: #76b2e7;
+  font-weight: 600;
+  margin-left: 5px;
 }
