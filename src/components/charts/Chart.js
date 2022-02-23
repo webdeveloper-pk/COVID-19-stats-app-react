@@ -1,28 +1,50 @@
-import ReactApexChart from "react-apexcharts";
-import { Typography } from "antd";
-import lineChart from "./configs/lineChart";
+import React from "react";
+import "chart.js/auto";
+import { Doughnut } from "react-chartjs-2";
 
-function LineChart() {
-  const { Title } = Typography;
-
+const CahrtComponent = ({ globalStats }) => {
+  console.log(globalStats, "chart data");
   return (
-    <>
-      <div className="linechart">
-        <div>
-          <Title level={5}>Active Users</Title>
-        </div>
-      </div>
-
-      <ReactApexChart
-        className="full-width"
-        options={lineChart.options}
-        series={lineChart.series}
-        type="area"
-        height={322}
-        width={"100%"}
+    <div>
+      <Doughnut
+        data={{
+          labels: ["Active", "Deaths", "Recovered"],
+          datasets: [
+            {
+              label: "# of cases",
+              data: [
+                globalStats.active,
+                globalStats.deaths,
+                globalStats.recovered,
+              ],
+              backgroundColor: ["#76B2E7", "#cf1322", "#81C784"],
+              borderColor: ["#76B2E7", "#cf1322", "#81C784"],
+              borderWidth: 1,
+            },
+          ],
+        }}
+        height={400}
+        width={800}
+        options={{
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+          legend: {
+            labels: {
+              fontSize: 25,
+            },
+          },
+        }}
       />
-    </>
+    </div>
   );
-}
+};
 
-export default LineChart;
+export default CahrtComponent;

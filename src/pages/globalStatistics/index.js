@@ -8,9 +8,8 @@ import {
   WarningOutlined,
   RightOutlined,
 } from "@ant-design/icons";
+import ChartComponent from "../../components/charts/Chart";
 import "./style.css";
-import LineChart from "../../components/charts/Chart";
-// import Chart from "../../components/charts/Chart";
 
 const GlobalStatistics = () => {
   const dispatch = useDispatch();
@@ -28,49 +27,59 @@ const GlobalStatistics = () => {
     <>
       <Row gutter={[28, 28]} type="flex">
         <Col xs={24} md={12} lg={6}>
-          <Statistic
-            title="Active Cases"
-            value={globalStats.active}
-            className="stats-card"
-            valueStyle={{ color: "#F56631" }}
-            prefix={<ArrowUpOutlined />}
-          />
+          <div className="custom-wrapper">
+            <Statistic
+              title="Active Cases"
+              value={globalStats.active}
+              className="stats-card"
+              valueStyle={{ color: "#76B2E7" }}
+              prefix={<ArrowUpOutlined />}
+            />
+          </div>
         </Col>
         <Col xs={24} md={12} lg={6}>
-          <Statistic
-            title="Total Cases"
-            value={globalStats.cases}
-            className="stats-card"
-            valueStyle={{ color: "#76B2E7" }}
-            prefix={<ArrowUpOutlined />}
-          />
+          <div className="custom-wrapper">
+            <Statistic
+              title="Total Cases"
+              value={globalStats.cases}
+              className="stats-card"
+              valueStyle={{ color: "#F56631" }}
+              prefix={<ArrowUpOutlined />}
+            />
+          </div>
         </Col>
         <Col xs={24} md={12} lg={6}>
-          <Statistic
-            title="Total Deaths"
-            value={globalStats.deaths}
-            className="stats-card"
-            valueStyle={{ color: "#cf1322" }}
-            prefix={<WarningOutlined />}
-          />
+          <div className="custom-wrapper">
+            <Statistic
+              title="Total Deaths"
+              value={globalStats.deaths}
+              className="stats-card"
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<WarningOutlined />}
+            />
+          </div>
         </Col>
         <Col xs={24} md={12} lg={6}>
-          <Statistic
-            title="Total Recovered"
-            value={globalStats.recovered}
-            className="stats-card"
-            valueStyle={{ color: "#81C784" }}
-            prefix={<SafetyOutlined />}
-          />
+          <div className="custom-wrapper">
+            <Statistic
+              title="Total Recovered"
+              value={globalStats.recovered}
+              className="stats-card"
+              valueStyle={{ color: "#81C784" }}
+              prefix={<SafetyOutlined />}
+            />
+          </div>
         </Col>
-        <Col xs={24} lg={18}>
-          <div className="stats-card">
-            <LineChart />
+        {/* chart Component */}
+        <Col xs={24} lg={18} style={{ display: "flex" }}>
+          <div className="stats-card custom-wrapper">
+            <ChartComponent globalStats={globalStats} />
           </div>
         </Col>
         <Col xs={24} lg={6}>
-          <div className="stats-card">
-            <span className="todayHeading">Today's Statistics </span>
+          <div className="stats-card custom-wrapper">
+            <div className="today-heading">Statistics </div>
+            <p className="today-text">Last 24 hours </p>
             <Divider />
             <Statistic
               title="Today Cases"
@@ -93,7 +102,7 @@ const GlobalStatistics = () => {
         </Col>
         {/* card with img + text */}
         <Col xs={24} lg={12} style={{ display: "flex" }}>
-          <Card className="stats-card blog-card">
+          <Card className="stats-card blog-card custom-wrapper">
             <Row gutter>
               <Col xs={24} md={12} sm={24} lg={12} xl={14}>
                 <div className="blog-wrapper">
@@ -124,7 +133,7 @@ const GlobalStatistics = () => {
         </Col>
         {/* card with text */}
         <Col xs={24} lg={12} style={{ display: "flex" }}>
-          <Card className="stats-card">
+          <Card className="stats-card custom-wrapper">
             <div className="">
               <div>
                 <h2 className="blog-text">Update on Omicron</h2>
