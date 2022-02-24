@@ -8,6 +8,10 @@ There are two routes
 
 2- "localhost:3000/countryData" (for countries detail )
 
+## Deployed on Heroku 
+
+https://covid19-statistics-app.herokuapp.com
+
 ## commands 
 
 npm i 
